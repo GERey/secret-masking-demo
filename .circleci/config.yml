@@ -1,11 +1,9 @@
-version: 2
+  version: 2.1
   jobs:
     secret-masking-example:
-      docker:
-        - image: python:3.6.0
-      working_directory: ~/secret-masking-demo
+      docker: 
+        - image: circleci/node:4.8.2 
       steps:
-        - checkout
 
         - run: echo $secret1
         - run: echo $short_secret
@@ -16,7 +14,7 @@ version: 2
 
 workflows:
   version: 2
-  secret-masking-example:
+  build:
     jobs:
       - secret-masking-example
 
