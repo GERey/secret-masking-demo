@@ -1,6 +1,6 @@
   version: 2.1
   jobs:
-    secret-masking-example:
+    build:
       docker: 
         - image: circleci/node:4.8.2 
       steps:
@@ -12,9 +12,4 @@
         - run: echo $context_secret
       
 
-workflows:
-  version: 2
-  build:
-    jobs:
-      - secret-masking-example
 
