@@ -1,0 +1,21 @@
+version: 2
+  secret-masking-example:
+    docker:
+      - image: python:3.6.0
+    working_directory: ~/secret-masking-demo
+    steps:
+      - checkout
+
+      - run: echo $secret1
+      - run: echo $short_secret
+      - run: echo $boolean_true_secret
+      - run: echo $boolean_false_secret
+      - run: echo $context_secret
+      
+
+workflows:
+  version: 2
+  secret-masking-example:
+    jobs:
+      - secret-masking-example
+
