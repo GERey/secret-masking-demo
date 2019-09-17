@@ -10,6 +10,15 @@
         - run: echo $boolean_true_secret
         - run: echo $boolean_false_secret
         - run: echo $context_secret
+        
+ workflows:
+  version: 2
+  secret:
+    jobs:
+      - build
+      - contexts:
+          context: George-org-global
+
       
 
 
